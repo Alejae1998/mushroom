@@ -28,7 +28,7 @@ const friendData = [
         satisfaction: 2,
     },
 ];
-
+console.log(friendData);
 addMushroomButton.addEventListener('click', () => {
     if (Math.random() > 0.5) {
         alert('found a mushroom!');
@@ -42,15 +42,13 @@ addMushroomButton.addEventListener('click', () => {
 
 addFriendButton.addEventListener('click', (e) => {
     e.preventDefault();
-    const formD = new FormData(form);
-    const friendInputEl = formD.get('friend-input');
     const newFriend = {
-        name: friend,
-        satisfaction: Math.ceil(Math.random)() * 3),
+        name: friendInputEl.value,
+        satisfaction: 1,
     };
     friendData.push(newFriend);
-    displayFriends();
-    form.reset();
+    // displayFriends();
+    friendInputEl.value = '';
     // get the name from the input
     // create a new friend object
     // push it into the friends state array, passed in as an argument
